@@ -31,15 +31,23 @@ export default function Register() {
     }
   return (
     <div className="register-container">
-        <form onSubmit={registerUser}>
-            <label >Name</label>
-            <input type="text" placeholder='Enter your name' value={data.name} onChange={(e) => setData({...data, name: e.target.value})}/>
-            <label >Email</label>
-            <input type="email" placeholder='iamjohndoe@gmail.com' value={data.email} onChange={(e) => setData({...data, email: e.target.value})}/>
-            <label >Password</label>
-            <input type="password" placeholder='Enter password'value={data.password} onChange={(e) => setData({...data, password: e.target.value})}/>
-            <button type='submit'></button>
-        </form>
-    </div>
+    <form onSubmit={registerUser}>
+      <div className="form-row">
+        <label htmlFor="nameInput">Name</label>
+        <input id="nameInput" type="text" placeholder="Enter your name" value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
+      </div>
+      <div className ="form-row">
+        <label htmlFor="emailInput">Email</label>
+        <input id="emailInput" type="email" placeholder="iamjohndoe@gmail.com" value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
+      </div>
+      <div className="form-row">
+        <label htmlFor="passwordInput">Password</label>
+        <input id="passwordInput" type="password" placeholder="Enter password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
+      </div>
+      <button id="registerBtn" type="submit">Register</button>
+    </form>
+  </div>
+  
+  
   )
 }
