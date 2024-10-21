@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # Step 2: Set the working direcory inside the container
-WORKDIR /client
+WORKDIR /frontend
 
 # Set the environment variable:
 ENV NODE_ENV=production 
@@ -17,11 +17,11 @@ RUN npm install
 COPY . .
 
 # Step 6: Build for production
-# RUN npm run build && \
-#     npm prune --production
+RUN npm run build && \
+     npm prune --production
 
 # SSTEP 7: Expose the port client runs on.
-EXPOSE 5173
+EXPOSE 3000
 
 # Step 8: Run your application.
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

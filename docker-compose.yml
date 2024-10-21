@@ -2,12 +2,12 @@ version: "3.8"
 services:
   mernauth-client:
     image: authentication-client:v1.0.0
-    build: ./client
+    build: ./frontend
     container_name: mernauth-client
     stdin_open: true
     tty: true
     ports:
-      - "5173:5173"
+      - "3000:3000"
     depends_on:
       - mernauth-server
     networks:
